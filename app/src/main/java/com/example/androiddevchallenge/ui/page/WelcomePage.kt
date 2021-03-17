@@ -2,7 +2,6 @@ package com.example.androiddevchallenge.ui.page
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
-import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -24,10 +23,10 @@ import com.example.androiddevchallenge.ui.weidget.AccountButton
  */
 @Composable
 fun WelcomePage() {
-    Surface(color = MaterialTheme.colors.primary) {
+    Surface(color = BloomTheme.colors.primary) {
         Image(
             contentScale = ContentScale.FillBounds,
-            painter = painterResource(id = R.drawable.ic_welcome_bg),
+            painter = painterResource(id = BloomTheme.images.logo),
             contentDescription = null
         )
         Column(
@@ -36,13 +35,13 @@ fun WelcomePage() {
                 .padding(top = 72.dp),
         ) {
             Image(
-                painter = painterResource(id = R.drawable.ic_welcome_illos),
+                painter = painterResource(id = BloomTheme.images.welcomeBg),
                 contentDescription = null,
                 modifier = Modifier.offset(x = 88.dp)
             )
             Spacer(modifier = Modifier.height(48.dp))
             Image(
-                painter = painterResource(id = R.drawable.ic_logo),
+                painter = painterResource(id = BloomTheme.images.welcomeImg),
                 contentDescription = null,
                 modifier = Modifier.fillMaxWidth(),
                 alignment = Alignment.Center
@@ -65,7 +64,7 @@ fun WelcomePage() {
                 text = "Log in",
                 Modifier.fillMaxWidth().padding(16.dp),
                 textAlign = TextAlign.Center,
-                color = MaterialTheme.colors.secondary
+                color = BloomTheme.colors.secondary
             )
         }
 

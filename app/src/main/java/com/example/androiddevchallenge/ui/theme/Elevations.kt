@@ -25,6 +25,6 @@ import androidx.compose.ui.unit.dp
  * Elevation values that can be themed.
  */
 @Immutable
-data class Elevations(val card: Dp = 0.dp)
+data class Elevations(val card: Dp = 1.dp, val snackBar: Dp = 2.dp, val bottomNav: Dp = 16.dp)
 
 internal val LocalElevations = staticCompositionLocalOf { Elevations() }

@@ -24,7 +24,11 @@ import androidx.compose.runtime.staticCompositionLocalOf
  * Images that can vary by theme.
  */
 @Immutable
-data class Images(@DrawableRes val lockupLogo: Int)
+data class Images(
+    @DrawableRes val logo: Int,
+    @DrawableRes val welcomeBg: Int,
+    @DrawableRes val welcomeImg: Int
+)
 
 internal val LocalImages = staticCompositionLocalOf<Images> {
     error("No LocalImages specified")

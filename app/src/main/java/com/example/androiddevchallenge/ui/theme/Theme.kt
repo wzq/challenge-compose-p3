@@ -18,7 +18,9 @@ package com.example.androiddevchallenge.ui.theme
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.ui.graphics.Color
+import com.example.androiddevchallenge.R
 
 private val DarkColorPalette = darkColors(
     primary = green900,
@@ -42,15 +44,20 @@ private val LightColorPalette = lightColors(
     onSecondary = Color.White,
     onBackground = Color.Gray,
     onSurface = Color.Gray,
+)
 
-    /* Other default colors to override
-background = Color.White,
-surface = Color.White,
-onPrimary = Color.White,
-onSecondary = Color.Black,
-onBackground = Color.Black,
-onSurface = Color.Black,
-*/
+val elevations = Elevations()
+
+val DarkImages = Images(
+    logo = R.drawable.ic_dark_logo,
+    welcomeBg = R.drawable.ic_dark_welcome_bg,
+    welcomeImg = R.drawable.ic_dark_welcome_illos
+)
+
+val LightImages = Images(
+    logo = R.drawable.ic_light_logo,
+    welcomeBg = R.drawable.ic_light_welcome_bg,
+    welcomeImg = R.drawable.ic_light_welcome_illos
 )
 
 @Composable
@@ -61,12 +68,19 @@ fun BloomTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable(
         LightColorPalette
     }
 
-    MaterialTheme(
-        colors = colors,
-        typography = typography,
-        shapes = shapes,
-        content = content
-    )
+    val images = if (darkTheme) DarkImages else LightImages
+    CompositionLocalProvider(
+        LocalElevations provides elevations,
+        LocalImages provides images
+    ) {
+        MaterialTheme(
+            colors = colors,
+            typography = typography,
+            shapes = shapes,
+            content = content
+        )
+    }
+
 }
 
 object BloomTheme {
