@@ -1,5 +1,5 @@
 /*
- * Copyright 2021 The Android Open Source Project
+ * Copyright 2020 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,18 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.example.androiddevchallenge.ui.theme
 
-import androidx.compose.ui.graphics.Color
+import androidx.annotation.DrawableRes
+import androidx.compose.runtime.Immutable
+import androidx.compose.runtime.staticCompositionLocalOf
 
-val pink100 = Color(0xFFFFF1F1)
-val pink900 = Color(0xFF3F2C2C)
+/**
+ * Images that can vary by theme.
+ */
+@Immutable
+data class Images(@DrawableRes val lockupLogo: Int)
 
-val gray = Color(0xFF232323)
-
-val green900 = Color(0xFF2D3B2D)
-val green300 = Color(0xFFB8C9B8)
-
-val whiteP15 = Color(0x26FFFFFF)
-val whiteP85 = Color(0xD9FFFFFF)
-
+internal val LocalImages = staticCompositionLocalOf<Images> {
+    error("No LocalImages specified")
+}

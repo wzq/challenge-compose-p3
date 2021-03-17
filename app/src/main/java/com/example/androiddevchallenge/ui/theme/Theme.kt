@@ -16,9 +16,7 @@
 package com.example.androiddevchallenge.ui.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.darkColors
-import androidx.compose.material.lightColors
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.graphics.Color
 
@@ -45,14 +43,14 @@ private val LightColorPalette = lightColors(
     onBackground = Color.Gray,
     onSurface = Color.Gray,
 
-        /* Other default colors to override
-    background = Color.White,
-    surface = Color.White,
-    onPrimary = Color.White,
-    onSecondary = Color.Black,
-    onBackground = Color.Black,
-    onSurface = Color.Black,
-    */
+    /* Other default colors to override
+background = Color.White,
+surface = Color.White,
+onPrimary = Color.White,
+onSecondary = Color.Black,
+onBackground = Color.Black,
+onSurface = Color.Black,
+*/
 )
 
 @Composable
@@ -69,4 +67,42 @@ fun BloomTheme(darkTheme: Boolean = isSystemInDarkTheme(), content: @Composable(
         shapes = shapes,
         content = content
     )
+}
+
+object BloomTheme {
+
+    /**
+     * Proxy to [MaterialTheme]
+     */
+    val colors: Colors
+        @Composable
+        get() = MaterialTheme.colors
+
+    /**
+     * Proxy to [MaterialTheme]
+     */
+    val typography: Typography
+        @Composable
+        get() = MaterialTheme.typography
+
+    /**
+     * Proxy to [MaterialTheme]
+     */
+    val shapes: Shapes
+        @Composable
+        get() = MaterialTheme.shapes
+
+    /**
+     * Retrieves the current [Elevations] at the call site's position in the hierarchy.
+     */
+    val elevations: Elevations
+        @Composable
+        get() = LocalElevations.current
+
+    /**
+     * Retrieves the current [Images] at the call site's position in the hierarchy.
+     */
+    val images: Images
+        @Composable
+        get() = LocalImages.current
 }

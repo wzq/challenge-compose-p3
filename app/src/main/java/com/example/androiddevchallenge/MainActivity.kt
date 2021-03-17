@@ -18,7 +18,6 @@ package com.example.androiddevchallenge
 import android.os.Bundle
 import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.runtime.Composable
 import com.example.androiddevchallenge.ui.page.WelcomePage
 import com.example.androiddevchallenge.ui.theme.BloomTheme
 
@@ -32,20 +31,3 @@ class MainActivity : AppCompatActivity() {
         }
     }
 }
-
-//
-//@Preview("Light Theme", widthDp = 360, heightDp = 640)
-//@Composable
-//fun LightPreview() {
-//    BloomTheme {
-//        MyApp()
-//    }
-//}
-//
-//@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-//@Composable
-//fun DarkPreview() {
-//    BloomTheme(darkTheme = true) {
-//        MyApp()
-//    }
-//}
