@@ -1,7 +1,14 @@
 package com.example.androiddevchallenge.ui.page
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -12,7 +19,6 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.androiddevchallenge.R
 import com.example.androiddevchallenge.ui.theme.BloomTheme
 import com.example.androiddevchallenge.ui.theme.typography
 import com.example.androiddevchallenge.ui.weidget.AccountButton
@@ -26,7 +32,7 @@ fun WelcomePage() {
     Surface(color = BloomTheme.colors.primary) {
         Image(
             contentScale = ContentScale.FillBounds,
-            painter = painterResource(id = BloomTheme.images.logo),
+            painter = painterResource(id = BloomTheme.images.welcomeBg),
             contentDescription = null
         )
         Column(
@@ -35,13 +41,13 @@ fun WelcomePage() {
                 .padding(top = 72.dp),
         ) {
             Image(
-                painter = painterResource(id = BloomTheme.images.welcomeBg),
+                painter = painterResource(id = BloomTheme.images.welcomeImg),
                 contentDescription = null,
                 modifier = Modifier.offset(x = 88.dp)
             )
             Spacer(modifier = Modifier.height(48.dp))
             Image(
-                painter = painterResource(id = BloomTheme.images.welcomeImg),
+                painter = painterResource(id = BloomTheme.images.logo),
                 contentDescription = null,
                 modifier = Modifier.fillMaxWidth(),
                 alignment = Alignment.Center
